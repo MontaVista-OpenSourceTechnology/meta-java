@@ -1,3 +1,4 @@
+PR .= ".1"
 PATCHES_URI = "\
     file://remove-shell-variables-from-autoheader.patch;striplevel=0 \
     file://filter-aclocal-copy-too.patch;striplevel=0 \
@@ -16,6 +17,7 @@ PATCHES_URI = "\
     file://0008-jdk-use-correct-include-for-signal.patch \
     file://0009-jdk-disable-backtrace-musl-build-fix.patch \
     file://0010-build-fix-build-on-as-needed-toolchains-generic.patch \
+    file://CVE-2018-2952.patch;striplevel=0 \
 "
 # some patches extracted from http://cr.openjdk.java.net/~rkennke/shark-build-hotspot/webrev.01/hotspot.patch
 # reported via http://mail.openjdk.java.net/pipermail/build-dev/2015-January/013972.html
