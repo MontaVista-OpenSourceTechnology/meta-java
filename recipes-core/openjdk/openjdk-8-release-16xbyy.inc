@@ -1,4 +1,4 @@
-PR .= ".2"
+PR .= ".8"
 PATCHES_URI = "\
     file://remove-shell-variables-from-autoheader.patch;striplevel=0 \
     file://filter-aclocal-copy-too.patch;striplevel=0 \
@@ -19,6 +19,12 @@ PATCHES_URI = "\
     file://0010-build-fix-build-on-as-needed-toolchains-generic.patch \
     file://CVE-2018-2952.patch;striplevel=0 \
     file://0001-Enable-HotSpot-builds-on-5.x-Linux-kernels.patch \
+    file://CVE-2020-2781.patch \
+    file://CVE-2020-2800.patch \
+    file://CVE-2020-2803.patch \
+    file://CVE-2020-2805_p1.patch \
+    file://CVE-2020-2805_p2.patch \
+    file://CVE-2020-2830.patch \
 "
 # some patches extracted from http://cr.openjdk.java.net/~rkennke/shark-build-hotspot/webrev.01/hotspot.patch
 # reported via http://mail.openjdk.java.net/pipermail/build-dev/2015-January/013972.html
