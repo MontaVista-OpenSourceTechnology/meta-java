@@ -1,0 +1,158 @@
+From a05d258d144d7e126e5fc00f9549c2e0d47e49a0 Mon Sep 17 00:00:00 2001
+From: Li Jiang <li.jiang@oracle.com>
+Date: Sat, 29 Jun 2019 14:31:40 +0100
+Subject: [PATCH] 8193552: ISO 4217 amendment 165 8202026: ISO 4217 amendment
+ 166 8204269: ISO 4217 amendment 167
+
+Reviewed-by: naoto, andrew
+
+Upstream-Status: Backport [https://github.com/openjdk/jdk8u-dev/commit/a05d258d144d7e126e5fc00f9549c2e0d47e49a0]
+Signed-off-by: Vijay Anusuri <vanusuri@mvista.com>
+---
+ jdk/src/share/classes/java/util/CurrencyData.properties   | 8 ++++----
+ .../classes/sun/util/resources/CurrencyNames.properties   | 2 ++
+ jdk/test/java/util/Currency/ValidateISO4217.java          | 4 ++--
+ jdk/test/java/util/Currency/tablea1.txt                   | 6 +++---
+ jdk/test/sun/text/resources/LocaleData                    | 3 +++
+ jdk/test/sun/text/resources/LocaleDataTest.java           | 2 +-
+ 6 files changed, 15 insertions(+), 10 deletions(-)
+
+diff --git a/jdk/src/share/classes/java/util/CurrencyData.properties b/jdk/src/share/classes/java/util/CurrencyData.properties
+index df077cd6..6322c869 100644
+--- a/jdk/src/share/classes/java/util/CurrencyData.properties
++++ b/jdk/src/share/classes/java/util/CurrencyData.properties
+@@ -46,7 +46,7 @@ all=ADP020-AED784-AFA004-AFN971-ALL008-AMD051-ANG532-AOA973-ARS032-ATS040-AUD036
+     HRK191-HTG332-HUF348-IDR360-IEP372-ILS376-INR356-IQD368-IRR364-ISK352-\
+     ITL380-JMD388-JOD400-JPY392-KES404-KGS417-KHR116-KMF174-KPW408-KRW410-\
+     KWD414-KYD136-KZT398-LAK418-LBP422-LKR144-LRD430-LSL426-LTL440-LUF442-\
+-    LVL428-LYD434-MAD504-MDL498-MGA969-MGF450-MKD807-MMK104-MNT496-MOP446-MRO478-\
++    LVL428-LYD434-MAD504-MDL498-MGA969-MGF450-MKD807-MMK104-MNT496-MOP446-MRO478-MRU929-\
+     MTL470-MUR480-MVR462-MWK454-MXN484-MXV979-MYR458-MZM508-MZN943-NAD516-NGN566-\
+     NIO558-NLG528-NOK578-NPR524-NZD554-OMR512-PAB590-PEN604-PGK598-PHP608-\
+     PKR586-PLN985-PTE620-PYG600-QAR634-ROL946-RON946-RSD941-RUB643-RUR810-RWF646-SAR682-\
+@@ -323,7 +323,7 @@ KG=KGS
+ # LAO PEOPLE'S DEMOCRATIC REPUBLIC (THE)
+ LA=LAK
+ # LATVIA
+-LV=LVL;2013-12-31-22-00-00;EUR
++LV=EUR
+ # LEBANON
+ LB=LBP
+ # LESOTHO
+@@ -335,7 +335,7 @@ LY=LYD
+ # LIECHTENSTEIN
+ LI=CHF
+ # LITHUANIA
+-LT=LTL;2014-12-31-22-00-00;EUR
++LT=EUR
+ # LUXEMBOURG
+ LU=EUR
+ # MACAU
+@@ -359,7 +359,7 @@ MH=USD
+ # MARTINIQUE
+ MQ=EUR
+ # MAURITANIA
+-MR=MRO
++MR=MRU
+ # MAURITIUS
+ MU=MUR
+ # MAYOTTE
+diff --git a/jdk/src/share/classes/sun/util/resources/CurrencyNames.properties b/jdk/src/share/classes/sun/util/resources/CurrencyNames.properties
+index c62d518e..a07b8534 100644
+--- a/jdk/src/share/classes/sun/util/resources/CurrencyNames.properties
++++ b/jdk/src/share/classes/sun/util/resources/CurrencyNames.properties
+@@ -178,6 +178,7 @@ MMK=MMK
+ MNT=MNT
+ MOP=MOP
+ MRO=MRO
++MRU=MRU
+ MTL=MTL
+ MUR=MUR
+ MVR=MVR
+@@ -398,6 +399,7 @@ mmk=Myanma Kyat
+ mnt=Mongolian Tugrik
+ mop=Macanese Pataca
+ mro=Mauritanian Ouguiya
++mru=Mauritanian Ouguiya
+ mtl=Maltese Lira
+ mur=Mauritian Rupee
+ mvr=Maldivian Rufiyaa
+diff --git a/jdk/test/java/util/Currency/ValidateISO4217.java b/jdk/test/java/util/Currency/ValidateISO4217.java
+index 568de12d..4584a8cd 100644
+--- a/jdk/test/java/util/Currency/ValidateISO4217.java
++++ b/jdk/test/java/util/Currency/ValidateISO4217.java
+@@ -23,7 +23,7 @@
+ /*
+  * @test
+  * @bug 4691089 4819436 4942982 5104960 6544471 6627549 7066203 7195759
+- *      8074350 8074351 8145952
++ *      8074350 8074351 8145952 8193552 8202026 8204269
+  * @summary Validate ISO 4217 data for Currency class.
+  */
+ 
+@@ -93,7 +93,7 @@ public class ValidateISO4217 {
+ 
+     /* Codes that are obsolete, do not have related country */
+     static final String otherCodes =
+-        "ADP-AFA-ATS-AYM-AZM-BEF-BGL-BOV-BYB-BYR-CHE-CHW-CLF-COU-CUC-CYP-DEM-EEK-ESP-FIM-FRF-GHC-GRD-GWP-IEP-ITL-LUF-MGF-MTL-MXV-MZM-NLG-PTE-ROL-RUR-SDD-SIT-SKK-SRG-TMM-TPE-TRL-VEF-UYI-USN-USS-VEB-XAG-XAU-XBA-XBB-XBC-XBD-XDR-XFO-XFU-XPD-XPT-XSU-XTS-XUA-XXX-YUM-ZMK-ZWD-ZWN-ZWR";
++        "ADP-AFA-ATS-AYM-AZM-BEF-BGL-BOV-BYB-BYR-CHE-CHW-CLF-COU-CUC-CYP-DEM-EEK-ESP-FIM-FRF-GHC-GRD-GWP-IEP-ITL-LTL-LUF-LVL-MGF-MRO-MTL-MXV-MZM-NLG-PTE-ROL-RUR-SDD-SIT-SKK-SRG-TMM-TPE-TRL-VEF-UYI-USN-USS-VEB-XAG-XAU-XBA-XBB-XBC-XBD-XDR-XFO-XFU-XPD-XPT-XSU-XTS-XUA-XXX-YUM-ZMK-ZWD-ZWN-ZWR";
+ 
+     static boolean err = false;
+ 
+diff --git a/jdk/test/java/util/Currency/tablea1.txt b/jdk/test/java/util/Currency/tablea1.txt
+index 10501b0d..1f37625c 100644
+--- a/jdk/test/java/util/Currency/tablea1.txt
++++ b/jdk/test/java/util/Currency/tablea1.txt
+@@ -135,14 +135,14 @@ KR	KRW	410	0
+ KW	KWD	414	3
+ KG	KGS	417	2
+ LA	LAK	418	2
+-LV	LVL	428	2	2013-12-31-22-00-00	EUR	978	2
++LV	EUR	978	2
+ LB	LBP	422	2
+ #LS	ZAR	710	2
+ LS	LSL	426	2
+ LR	LRD	430	2
+ LY	LYD	434	3
+ LI	CHF	756	2
+-LT	LTL	440	2	2014-12-31-22-00-00	EUR	978	2
++LT	EUR	978	2
+ LU	EUR	978	2
+ MO	MOP	446	2
+ MK	MKD	807	2
+@@ -154,7 +154,7 @@ ML	XOF	952	0
+ MT	EUR	978	2
+ MH	USD	840	2
+ MQ	EUR	978	2
+-MR	MRO	478	2
++MR	MRU	929	2
+ MU	MUR	480	2
+ YT	EUR	978	2
+ MX	MXN	484	2
+diff --git a/jdk/test/sun/text/resources/LocaleData b/jdk/test/sun/text/resources/LocaleData
+index f4c26f6d..7394d3f4 100644
+--- a/jdk/test/sun/text/resources/LocaleData
++++ b/jdk/test/sun/text/resources/LocaleData
+@@ -8296,3 +8296,6 @@ CurrencyNames//pen=Peruvian Sol
+ # bug #8145952
+ CurrencyNames//byn=Belarusian Ruble
+ CurrencyNames/be_BY/BYN=\u0420\u0443\u0431
++
++# bug $8193552
++CurrencyNames//mru=Mauritanian Ouguiya
+diff --git a/jdk/test/sun/text/resources/LocaleDataTest.java b/jdk/test/sun/text/resources/LocaleDataTest.java
+index 94e92b95..0467fbe3 100644
+--- a/jdk/test/sun/text/resources/LocaleDataTest.java
++++ b/jdk/test/sun/text/resources/LocaleDataTest.java
+@@ -37,7 +37,7 @@
+  *      7003124 7085757 7028073 7171028 7189611 8000983 7195759 8004489 8006509
+  *      7114053 7074882 7040556 8013836 8021121 6192407 6931564 8027695 7090826
+  *      8017142 8037343 8055222 8042126 8074791 8075173 8080774 8129361
+- *      8145952 8164784
++ *      8145952 8164784 8193552 8202026 8204269
+  * @summary Verify locale data
+  *
+  */
+-- 
+2.18.2
+

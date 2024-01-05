@@ -1,4 +1,4 @@
-PR .= ".8"
+PR .= ".9"
 PATCHES_URI = "\
     file://remove-shell-variables-from-autoheader.patch;striplevel=0 \
     file://filter-aclocal-copy-too.patch;striplevel=0 \
@@ -25,6 +25,7 @@ PATCHES_URI = "\
     file://CVE-2020-2805_p1.patch \
     file://CVE-2020-2805_p2.patch \
     file://CVE-2020-2830.patch \
+    file://0001-8193552-ISO-4217-amendment-165.patch \
 "
 # some patches extracted from http://cr.openjdk.java.net/~rkennke/shark-build-hotspot/webrev.01/hotspot.patch
 # reported via http://mail.openjdk.java.net/pipermail/build-dev/2015-January/013972.html
