@@ -22,6 +22,8 @@ PATCHES_URI = "\
     file://2008-jdk-no-unused-deps.patch \
     file://2009-jdk-make-use-gcc-instead-of-ld-for-genSocketOptionRe.patch \
     file://CVE-2022-40433.patch \
+    file://CVE-2024-20919.patch \
+    file://CVE-2024-20921.patch \
 "
 HOTSPOT_UB_PATCH = "\
     file://1001-hotspot-fix-crash-on-JNI_CreateJavaVM.patch \
