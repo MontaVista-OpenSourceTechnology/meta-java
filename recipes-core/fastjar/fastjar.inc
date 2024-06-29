@@ -7,7 +7,7 @@ PR = "r1"
 
 DEPENDS = "zlib"
 
-SRC_URI = "http://download.savannah.nongnu.org/releases/fastjar/fastjar-${PV}.tar.gz"
+SRC_URI = "${SAVANNAH_NONGNU_MIRROR}/fastjar/fastjar-${PV}.tar.gz"
 
 inherit autotools update-alternatives
 
