@@ -28,6 +28,7 @@ PATCHES_URI = "\
     file://CVE-2024-21147.patch \
     file://CVE-2024-20945.patch \
     file://CVE-2024-21085.patch \
+    file://CVE-2024-21094.patch \
 "
 HOTSPOT_UB_PATCH = "\
     file://1001-hotspot-fix-crash-on-JNI_CreateJavaVM.patch \
