@@ -14,7 +14,7 @@ Contributing via E-Mail
 -----------------------
 
 To contribute to this layer you may submit the patches for review to the
-mailing list (openembedded-devel@lists.openembedded.org).
+mailing list (yocto-patches@lists.yoctoproject.org.).
 
 Please refer to:
 https://wiki.yoctoproject.org/wiki/Contribution_Guidelines#General_Information
