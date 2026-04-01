@@ -56,9 +56,12 @@ ALTJARFILENAMES = "${BPN}.jar"
 # we want to delete first.
 do_deletebinaries() {
   find ${WORKDIR} ! -path "${RECIPE_SYSROOT}/*" ! -path "${RECIPE_SYSROOT_NATIVE}/*" \
-                  -name "*.jar" -exec rm {} \;
+                  -ignore_readdir_race \
+                  -name "*.jar" -exec rm -f {} \; 2>/dev/null || true
+
   find ${WORKDIR} ! -path "${RECIPE_SYSROOT}/*" ! -path "${RECIPE_SYSROOT_NATIVE}/*" \
-                  -name "*.class" -exec rm {} \;
+                  -ignore_readdir_race \
+                  -name "*.class" -exec rm -f {} \; 2>/dev/null || true
 }
 
 addtask deletebinaries after do_unpack before do_patch
