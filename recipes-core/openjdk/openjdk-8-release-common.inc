@@ -33,6 +33,15 @@ PATCHES_URI = "\
     file://CVE-2025-21587-pre-02.patch \
     file://CVE-2025-21587-pre-03.patch \
     file://CVE-2025-21587.patch \
+    file://CVE-2025-50059.patch \
+    file://CVE-2025-30749-01.patch \
+    file://CVE-2025-30749-02.patch \
+    file://CVE-2025-30754.patch \
+    file://CVE-2025-30761.patch \
+    file://CVE-2025-50106.patch \
+    file://CVE-2025-30698-pre.patch \
+    file://CVE-2025-30698.patch \
+    file://CVE-2025-53057.patch \
 "
 HOTSPOT_UB_PATCH = "\
     file://1001-hotspot-fix-crash-on-JNI_CreateJavaVM.patch \
